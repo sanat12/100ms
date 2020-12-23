@@ -8,6 +8,13 @@ import {useState,useEffect} from 'react';
 import axios from 'axios'
 import Specific from '../Characters/Specific'
 import {history} from '../../helpers/history'
+import { Button, notification, Divider, Space } from 'antd'
+import {
+  RadiusUpleftOutlined,
+  RadiusUprightOutlined,
+  RadiusBottomleftOutlined,
+  RadiusBottomrightOutlined,
+} from '@ant-design/icons';
 
 function Home(){
 let [options,setOptions]=useState([]);
@@ -31,9 +38,15 @@ useEffect(()=>{
 },[])
 
 const Send=(event)=>{
-  console.log(char);
+  if(char==''){
+    history.push('/home')
+    history.go()
+  }
+    else{
+        console.log(char);
   history.push(`/specific/${char}`)
   history.go()
+    }
 }
 
 console.log(options)
@@ -52,7 +65,7 @@ function search(value){
   </div>  
   <br /><br/><br/><br /><br /><br /><br /><br />
    <div class="wrap">
-      <button class="buton" onClick={Send}>Search</button>
+      <button class="sanat" onClick={Send}>Search</button>
    </div>
 
 </div>

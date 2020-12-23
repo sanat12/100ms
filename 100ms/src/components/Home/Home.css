@@ -116,7 +116,9 @@
 
 .select-search__option.is-highlighted,
 .select-search__option:not(.is-selected):hover {
-    background: rgba(47, 204, 139, 0.1);
+    background: #2eb378;
+    color: #fff;
+    opacity: 1;
 }
 
 .select-search__option.is-highlighted.is-selected,
